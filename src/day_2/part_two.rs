@@ -5,10 +5,9 @@ pub fn main() -> Result<(), Box<dyn Error>> {
     let file = std::fs::read_to_string("src/day_2/input.txt")?;
 
     let points: i32 = file
-        .split("\n")
-        .into_iter()
+        .split('\n')
         .map(|round| {
-            let split = round.split(" ").collect::<Vec<&str>>();
+            let split = round.split(' ').collect::<Vec<&str>>();
             if split.len() < 2 {
                 return 0;
             }
@@ -46,17 +45,17 @@ fn calculate_score(enemy: &Shape, outcome: &Outcome) -> i32 {
         Shape::Rock => match outcome {
             Outcome::Win => 6 + 2,
             Outcome::Draw => 3 + 1,
-            Outcome::Lose => 0 + 3,
+            Outcome::Lose => 3,
         },
         Shape::Paper => match outcome {
             Outcome::Win => 6 + 3,
             Outcome::Draw => 3 + 2,
-            Outcome::Lose => 0 + 1,
+            Outcome::Lose => 1,
         },
         Shape::Scissor => match outcome {
             Outcome::Win => 6 + 1,
             Outcome::Draw => 3 + 3,
-            Outcome::Lose => 0 + 2,
+            Outcome::Lose => 2,
         },
     }
 }

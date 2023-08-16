@@ -5,10 +5,9 @@ pub fn main() -> Result<(), Box<dyn Error>> {
     let file = std::fs::read_to_string("src/day_2/input.txt")?;
 
     let points: i32 = file
-        .split("\n")
-        .into_iter()
+        .split('\n')
         .map(|round| {
-            let split = round.split(" ").collect::<Vec<&str>>();
+            let split = round.split(' ').collect::<Vec<&str>>();
             if split.len() < 2 {
                 return 0;
             }
