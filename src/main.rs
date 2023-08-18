@@ -4,6 +4,7 @@ mod day_3;
 mod day_4;
 mod day_5;
 mod day_6;
+mod day_7;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     // day_1::part_one::main()
@@ -17,5 +18,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     // day_5::part_one::main()
     // day_5::part_two::main()
     // day_6::part_one::main()
-    day_6::part_two::main()
+    // day_6::part_two::main()
+    // day_7::part_one::main()
+    day_7::part_two::main()
 }
