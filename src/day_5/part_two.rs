@@ -26,14 +26,10 @@ pub fn main() -> Result<(), Box<dyn Error>> {
             .copied()
             .collect();
 
-        dbg!(instruction.repeat, &stack_from, &items);
-
         items.iter().for_each(|item| {
             stack_from.pop();
         });
-        items.into_iter().for_each(|item| {
-            stack_to.push(item);
-        });
+        stack_to.extend(items.iter());
     });
 
     let top_crates: String = crates
